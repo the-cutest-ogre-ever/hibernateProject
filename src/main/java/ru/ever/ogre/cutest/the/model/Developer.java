@@ -1,23 +1,34 @@
 package ru.ever.ogre.cutest.the.model;
 
+import javax.persistence.*;
+
 import java.util.ArrayList;
 import java.util.Set;
 
 public class Developer {
+    @Id
+    @GeneratedValue (strategy = GenerationType.AUTO)
+    @Column (name = "id")
     private int id;
+    @Column (name = "firstName")
     private String firstName;
-    private String secondName;
+    @Column (name = "lastName")
+    private String lastName;
+    @Column (name = "speciality")
     private String speciality;
+    @Column (name = "experience")
     private int experience;
+    @Column (name = "skill")
     private Set<Skill> skills;
+    @Column (name = "project")
     private ArrayList<Project> projects;
 
     public Developer() {
     }
 
-    public Developer(String firstName, String secondName, String speciality, int experience) {
+    public Developer(String firstName, String lastName, String speciality, int experience) {
         this.firstName = firstName;
-        this.secondName = secondName;
+        this.lastName = lastName;
         this.speciality = speciality;
         this.experience = experience;
     }
@@ -38,12 +49,12 @@ public class Developer {
         this.firstName = firstName;
     }
 
-    public String getSecondName() {
-        return secondName;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setSecondName(String secondName) {
-        this.secondName = secondName;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getSpeciality() {
@@ -83,7 +94,7 @@ public class Developer {
         return "Developer{" +
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
-                ", secondName='" + secondName + '\'' +
+                ", lastName='" + lastName + '\'' +
                 ", speciality='" + speciality + '\'' +
                 ", experience=" + experience +
                 ", skills=" + skills +
