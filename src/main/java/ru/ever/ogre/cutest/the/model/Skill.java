@@ -1,7 +1,16 @@
 package ru.ever.ogre.cutest.the.model;
 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 public class Skill {
+    @Id
+    @GeneratedValue (strategy = GenerationType.AUTO)
+    @Column (name = "id")
     private int id;
+    @Column (name = "name")
     private String name;
 
     public Skill() {

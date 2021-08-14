@@ -1,11 +1,18 @@
 package ru.ever.ogre.cutest.the.model;
 
+import javax.persistence.*;
 import java.util.Set;
 
 public class Project {
+    @Id
+    @GeneratedValue (strategy = GenerationType.AUTO)
+    @Column (name = "id")
     private int id;
+    @Column (name = "title")
     private String title;
+    @Column (name = "description")
     private String description;
+    @Column (name = "skillsStack")
     private Set<Skill> skillsStack;
 
     public Project() {
