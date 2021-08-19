@@ -37,7 +37,7 @@ public class DeveloperRunner {
         Transaction transaction = null;
 
         transaction = session.beginTransaction();
-        List<Developer> developers = session.createQuery("FROM Developers").list();
+        List<Developer> developers = session.createQuery("FROM Developer").list();
         for (Developer developer : developers)
             System.out.println(developer + "\n");
         session.close();
