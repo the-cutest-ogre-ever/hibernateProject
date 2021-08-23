@@ -3,6 +3,8 @@ package ru.ever.ogre.cutest.the.model;
 import javax.persistence.*;
 import java.util.Set;
 
+@Entity
+@Table(name = "Projects")
 public class Project {
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)
@@ -12,16 +14,16 @@ public class Project {
     private String title;
     @Column (name = "description")
     private String description;
-    @Column (name = "skillsStack")
-    private Set<Skill> skillsStack;
+    @Column (name = "skills")
+    private Set<Skill> skills;
 
     public Project() {
     }
 
-    public Project(String title, String description, Set<Skill> skillsStack) {
+    public Project(String title, String description, Set<Skill> skills) {
         this.title = title;
         this.description = description;
-        this.skillsStack = skillsStack;
+        this.skills = skills;
     }
 
     public int getId() {
@@ -48,12 +50,12 @@ public class Project {
         this.description = description;
     }
 
-    public Set<Skill> getSkillsStack() {
-        return skillsStack;
+    public Set<Skill> getSkills() {
+        return skills;
     }
 
-    public void setSkillsStack(Set<Skill> skillsStack) {
-        this.skillsStack = skillsStack;
+    public void setSkills(Set<Skill> skills) {
+        this.skills = skills;
     }
 
     @Override
@@ -62,7 +64,7 @@ public class Project {
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", description='" + description + '\'' +
-                ", skillsStack=" + skillsStack +
+                ", skillsStack=" + skills +
                 '}';
     }
 }

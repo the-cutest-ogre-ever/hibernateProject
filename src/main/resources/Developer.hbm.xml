@@ -16,6 +16,13 @@
         <property name="lastName" column="lastName" type="string"/>
         <property name="speciality" column="speciality" type="string"/>
         <property name="experience" column="experience" type="int"/>
-
+        <set name="skills" cascade="all">
+            <key column="name"/>
+            <one-to-many class="ru.ever.ogre.cutest.the.model.Skill"/>
+        </set>
+        <bag name="projects" cascade="all">
+            <key column="title"/>
+            <one-to-many class="ru.ever.ogre.cutest.the.model.Project"/>
+        </bag>
     </class>
 </hibernate-mapping>

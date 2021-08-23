@@ -1,10 +1,9 @@
 package ru.ever.ogre.cutest.the.model;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
+@Entity
+@Table(name = "Skills")
 public class Skill {
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)

@@ -5,6 +5,8 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Set;
 
+@Entity
+@Table(name = "Developers")
 public class Developer {
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)
